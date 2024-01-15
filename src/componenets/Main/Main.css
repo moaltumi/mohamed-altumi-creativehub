@@ -1,44 +1,44 @@
-.hero {
+.main {
   background-color: white;
   margin: 2rem;
   display: flex;
   flex-direction: column;
 }
-.hero__heading {
+.main__heading {
   font-size: 2rem;
   font-weight: 700;
   color: #000;
   display: flex;
   flex-direction: column;
 }
-.hero__list {
+.main__list {
   display: flex;
   flex-direction: row;
   justify-content: center;
   list-style: none;
   padding: 0;
 }
-.hero__list__item {
+.main__list__item {
   margin: 0 1rem;
   font-size: 1.5rem;
   font-weight: 700;
   color: #000;
   cursor: pointer;
 }
-.hero__list__item:hover {
+.main__list__item:hover {
   color: #000;
 }
-.hero__list__item__image {
+.main__list__item__image {
   width: 2rem;
   height: 2rem;
   margin-right: 0.5rem;
 }
-.hero__list__item__heading {
+.main__list__item__heading {
   font-size: 1.5rem;
   font-weight: 700;
   color: #000;
 }
-.hero__list__item__text {
+.main__list__item__text {
   font-size: 1rem;
   font-weight: 400;
   color: #000;
@@ -87,4 +87,4 @@
 .main__col__two__image {
   width: 40%;
   height: 5vh;
-}/*# sourceMappingURL=Hero.css.map */
+}/*# sourceMappingURL.main.css.map */

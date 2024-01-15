@@ -1,26 +1,35 @@
 import React from 'react';
 import './Footer.scss';
-// import logo from '../../../assets/logo.svg';
-// import facebook from '../../../assets/facebook.svg';
-// import instagram from '../../../assets/instagram.svg';
-// import twitter from '../../../assets/twitter.svg';
-// import tiktok from '../../../assets/tiktok.svg';
+import logo from '../../assets/images/Creativehub.png';
+import instagram from '../../assets/images/Instagram_black.png';
+import facebook from '../../assets/images/Facebook_black.png';
+import twitter from '../../assets/images/Twitter_black.png';
+
 
 const Footer = ()=> {
     return (
+        <>
         <div className="footer">
             <div className="footer__row__one">
-                <a href = "#"><img className="footer__row__one__logo" src = "" alt = "creativehub logo"></img></a>
+            <img className="footer__row__one__logo" src = {logo}></img>
                 </div>
 
                 <div className="footer__row__two">
-                <a href = "#"><img className="footer__row__two__" src = ""></img></a>
-                <a href = "#"><img className="footer__row__one__logo" src = ""></img></a>
-                <a href = "#"><img className="footer__row__one__logo" src =""></img></a>
-                <a href = "#"><img className="footer__row__one__logo" src =""></img></a>
+               <img className="footer__row__two__logo__social" src = {instagram}></img>
+               <img className="footer__row__two__logo__social" src ={facebook}></img>
+               <img className="footer__row__two__logo__social" src ={twitter}></img>
         </div>
 
+
         </div>
+
+<div className="footer__row__three">
+<p className="footer__row__three__text">© 2024 CreativeHub. All rights reserved.</p>
+</div>
+
+</>
+
+
     );
     };
     export default Footer;
