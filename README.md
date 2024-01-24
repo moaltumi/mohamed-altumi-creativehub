@@ -1,70 +1,76 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Project Title
+Creative Hub BY Mohamed Altumi
 
-## Available Scripts
+# Overview
+Creative Hub is a platform that facilitates collaboration between creators and brands, addressing the increasing demand for influencers in marketing. The goal is to streamline communication between creators and businesses, eliminating the current reliance on direct outreach through platforms like Instagram.
 
-In the project directory, you can run:
+ # Problem
+In the current market, there is a lack of a centralized platform that effectively connects creators and brands. Many creators resort to reaching out to brands on social media platforms like Instagram, leading to inefficiencies and missed opportunities.
 
-### `npm start`
+# User Profile
+The application primarily targets brands and small to medium-sized creators seeking collaboration opportunities. These users often struggle to find suitable partners for their marketing needs.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Features
+Creator Onboarding:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Creators can log in using their Instagram profile.
+If unsuccessful, creators can manually input their feed information, ensuring participation even without an Instagram connection.
+Profile Customization:
 
-### `npm test`
+Creators can set location, minimum price, and choose their category to tailor their profiles.
+Brands can log in using their Instagram accounts and customize their feed based on location, budget, and preferences.
+Implementation
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Tech Stack
+Frontend:
+TypeScript
+React Router
+Axios
 
-### `npm run build`
+Backend:
+Authentication
+APIs
+Utilize the Instagram user account main feed for data.
+Sitemap
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+https://www.figma.com/file/NIWnvKAUAm54BIWrd6Pqvz/Mohamed-Altumi-Project-creativehub?type=design&node-id=0%3A1&mode=design&t=9bKkBVlc8ydFwPv3-1
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Mockups
+https://www.figma.com/file/NIWnvKAUAm54BIWrd6Pqvz/Mohamed-Altumi-Project-creativehub?type=design&node-id=0%3A1&mode=design&t=9bKkBVlc8ydFwPv3-1
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Data
+No external data will be used; the platform relies on instagram api.
 
-### `npm run eject`
+# Endpoints
+Utilize Instagram user account main feed as a primary data source.
+Auth
+Users (creators/brands) can log in using their Instagram accounts, granting permission to retrieve their account details.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Roadmap
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Sprint 1: Project Setup and Landing Page
+Set up the project structure for both client and server.
+Initialize Git repository and configure version control.
+Create a basic landing page for the platform.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Sprint 2: User Authentication and Onboarding
+Implement user registration and login functionality.
+Develop user onboarding pages.
+Integrate OAuth authentication with Instagram for influencers.
+Ensure secure storage of user data and implement password reset functionality.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Sprint 3: Profile Management and Search
+Create influencer and brand profile pages.
+Implement the ability for influencers and brands to connect their Instagram accounts.
+Develop a search functionality for brands to discover influencers.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Nice-to-haves
+Implement a messaging system for influencers and brands to communicate.
+Add a "create posting" feature for brands to post gigs visible on influencer pages.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
