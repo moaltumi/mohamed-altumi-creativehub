@@ -16,7 +16,7 @@ function Onboarding() {
           Connect with Influencers to Skyrocket Your Product's Reach
         </h2>
         <button className="onboarding__button">
-          Get Started With Instagram
+          Get Started With Instagram{" "}
         </button>
         <p className="onboarding__text">
           Already have an account?{" "}
