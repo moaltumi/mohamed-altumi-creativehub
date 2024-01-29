@@ -3,7 +3,7 @@ import "./Onboarding.scss";
 import logo from "../../../assets/images/Creativehub.png";
 import { Link } from "react-router-dom";
 
-function Onboarding() {
+function OnboardingPage() {
   return (
     <>
       <Link to="/">
@@ -15,15 +15,18 @@ function Onboarding() {
         <h2 className="onboarding__subtitle">
           Connect with Influencers to Skyrocket Your Product's Reach
         </h2>
-        <button className="onboarding__button">
-          Get Started With Instagram{" "}
-        </button>
+        <Link to="./Feeds">
+          <button className="onboarding__button">
+            Get Started With Instagram
+          </button>
+        </Link>
         <p className="onboarding__text">
           Already have an account?{" "}
-          <Link className="onboarding__text__signin">Signin</Link>
+          <Link className="onboarding__text__signin">Sign in</Link>
         </p>
       </div>
     </>
   );
 }
-export default Onboarding;
+
+export default OnboardingPage;
