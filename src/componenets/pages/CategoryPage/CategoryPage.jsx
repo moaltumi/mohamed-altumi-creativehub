@@ -1,5 +1,4 @@
 import React from "react";
-import Select from "react-select";
 import "./CategoryPage.scss";
 import logo from "../../../assets/images/Creativehub.png";
 import { Link } from "react-router-dom";
@@ -19,7 +18,7 @@ function CategoryPage() {
           <p className="details__category__subtitle">
             Choose the perfect category which represent you better
           </p>
-          <Select id="categories" name="categories">
+          <select id="categories" name="categories">
             <option value="technology">Fitness and Wellness</option>
             <option value="fashion">Fashion and Beauty</option>
             <option value="sports">Travel and Adventure</option>
@@ -28,7 +27,7 @@ function CategoryPage() {
             <option value="art">Art and Photography</option>
             <option value="lifestyle">Lifestyle and Home</option>
             <option value="business">Business and Entrepreneurship</option>
-          </Select>
+          </select>
         </div>
 
         <div className="details__influncer__followers">
