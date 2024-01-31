@@ -1,10 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import "./SignUpPage.scss";
 import logo from "../../../assets/images/Creativehub.png";
 import profileimage from "../../../assets/images/profileimage.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function SignUpPage() {
+  const [userData, setUserDataLocal] = useState({
+    name: "",
+    email: "",
+    phone: "",
+  });
+
+  const handleInputChange = (e) => {
+    const { id, value } = e.target;
+    setUserDataLocal((prevData) => ({
+      ...prevData,
+      [id]: value,
+    }));
+  };
+
+  const navigate = useNavigate();
+
+  const saveUserData = () => {
+    // Validation: Check if any field is empty before saving
+    if (!userData.name || !userData.email || !userData.phone) {
+      alert("Please fill in all fields before proceeding.");
+      return;
+    }
+
+    // Navigate to the next page with user data as state
+    navigate("/onboarding/Feeds", { state: { userData } });
+  };
+
   return (
     <>
       <div>
@@ -30,6 +57,8 @@ function SignUpPage() {
               className="signup__form__name__input"
               type="text"
               id="name"
+              value={userData.name}
+              onChange={handleInputChange}
             />
           </div>
           <div className="signup__form__info">
@@ -39,6 +68,8 @@ function SignUpPage() {
                 className="signup__form__info__input"
                 type="email"
                 id="email"
+                value={userData.email}
+                onChange={handleInputChange}
               />
             </div>
             <div>
@@ -48,13 +79,17 @@ function SignUpPage() {
                 className="signup__form__info__input"
                 type="text"
                 id="phone"
+                value={userData.phone}
+                onChange={handleInputChange}
               />
             </div>
           </div>
         </form>
-        <Link to="/signup/category">
-          <button className="signup__button">Next</button>
-        </Link>
+        <div>
+          <button className="signup__button" onClick={saveUserData}>
+            Next
+          </button>
+        </div>
       </div>
     </>
   );

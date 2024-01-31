@@ -41,7 +41,7 @@ const Header = () => {
       <div className="hero">
         <div className="hero__col__one">
           <h1 className="hero__col__one__title">
-            Unlcok the Power of Influence for your Business
+            Unlock the Power of Influence for your Business
           </h1>
           <p className="hero__col__one__subtitle">
             Connect with Influencers to skyrocket your product reach
