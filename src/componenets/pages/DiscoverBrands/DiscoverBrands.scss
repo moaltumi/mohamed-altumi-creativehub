@@ -1,0 +1,159 @@
+.discover {
+  width: 100%;
+  background-image: url("../../../assets//images/backgroundimage.png");
+  width: 100%;
+  height: 150vh;
+  // background-repeat: repeat;
+  background-size: cover;
+
+  &__profile-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    &__rowone {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      width: 598px;
+      height: 64px;
+      padding: 0 1rem;
+      margin-bottom: 1rem;
+      border-radius: 16px;
+      //   border: 1px solid #7c55ff;
+      position: relative;
+      bottom: 3rem;
+      left: 14rem;
+      //   background: #fff;
+
+      &__select {
+        display: flex;
+        flex-direction: row;
+
+        &-location {
+          background-image: url("../../../assets//images/brand_location\ 1.svg"),
+            url("../../../assets//images/chevron-down.png");
+          background-repeat: no-repeat;
+          background-position: 5% 50%, 100% 50%;
+          background-size: 20px, 21px;
+          width: 147px;
+          height: 40px;
+          border-radius: 16px;
+          background-color: white;
+          border-style: none;
+          color: black;
+          font-size: 16px;
+          font-weight: 400;
+        }
+        &-followers {
+          background-image: url("../../../assets//images/followers.svg"),
+            url("../../../assets//images/chevron-down.png");
+          background-repeat: no-repeat;
+          background-position: 5% 50%, 100% 50%;
+          background-size: 20px, 21px;
+          width: 147px;
+          height: 40px;
+          border-radius: 16px;
+          border-style: none;
+          background-color: white;
+          color: black;
+          font-size: 16px;
+          font-weight: 400;
+          //   background-color: #f0f0f0;
+        }
+        &-budget {
+          background-image: url("../../../assets//images/Dollar_Coin_1\ 1.svg"),
+            url("../../../assets//images/chevron-down.png");
+          background-repeat: no-repeat;
+          background-position: 5% 50%, 100% 50%;
+          background-size: 20px, 21px;
+          width: 147px;
+          height: 40px;
+          border-radius: 16px;
+          border-style: none;
+          background-color: white;
+          color: black;
+          font-size: 16px;
+          font-weight: 400;
+        }
+        &-search {
+          background-image: url("../../../assets/images/search\ 1.svg");
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 40px;
+          height: 40px;
+          border-radius: 16px;
+          border-style: none;
+          background-color: #7c55ff;
+        }
+      }
+
+      &__stats {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        padding: 0 0.5rem;
+      }
+    }
+
+    &__gallery {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+      margin-left: 14rem;
+
+      &__rowtwo {
+        display: flex;
+        flex-direction: column;
+
+        &__profile {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          &__image {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+          }
+          &__name {
+            font-size: 16px;
+            font-weight: 400;
+            margin-left: 0.5rem;
+          }
+
+          &__followers {
+            font-size: 12px;
+            font-weight: 400;
+            margin-left: 1rem;
+            color: grey;
+          }
+          &__instagram {
+            width: 100px;
+            height: 40px;
+          }
+        }
+        &__post {
+          &-image {
+            width: 360px;
+            height: 400px;
+            padding: 11px;
+            border-radius: 16px;
+          }
+
+          &-description {
+            font-size: 16px;
+            font-weight: 400;
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

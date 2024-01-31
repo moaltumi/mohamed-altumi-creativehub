@@ -88,9 +88,11 @@ const Feeds = () => {
                 {userData.phone}
               </p>
             </div>
-            <button className="profile-card__rowthree__discover">
-              Disocver Brands
-            </button>
+            <Link to="/discoverbrands">
+              <button className="profile-card__rowthree__discover">
+                Disocver Brands
+              </button>
+            </Link>
           </div>
         </div>
 
