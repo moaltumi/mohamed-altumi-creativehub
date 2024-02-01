@@ -1,5 +1,7 @@
+import { useState, useEffect } from "react";
 import React from "react";
 import "./DiscoverBrands.scss";
+import instagramLogo from "../../../assets/images/Instagram_black.png";
 import logo from "../../../assets/images/Creativehub.png";
 import images from "../../../assets/images/images.jpeg";
 import profileimage from "../../../assets/images/profileimage.png";
@@ -7,14 +9,35 @@ import connect from "../../../assets/images/connect.svg";
 import { Link } from "react-router-dom";
 
 const DiscoverBrands = () => {
+  const [travelBrands, setTravelBrands] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://localhost:3030/travelBrands");
+        const data = await response.json();
+        setTravelBrands(data.travelBrands);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <>
       <div className="discover">
-        <Link to="/">
-          <img className="logo" src={logo} alt="logo" />
-        </Link>
-
         <div className="discover__profile-card">
+          <Link to="/">
+            <img
+              className="discover__profile-card__logo"
+              src={logo}
+              alt="logo"
+            />
+          </Link>
+
+          {/* logo and filter bar */}
+
           <div className="discover__profile-card__rowone">
             <div className="discover__profile-card__rowone__select">
               <button className="discover__profile-card__rowone__select-location">
@@ -36,196 +59,42 @@ const DiscoverBrands = () => {
               <button className="discover__profile-card__rowone__select-search"></button>
             </div>
           </div>
+        </div>
 
-          <div className="discover__profile-card__gallery">
-            <div className="discover__profile-card__gallery__rowtwo">
-              <div className="discover__profile-card__gallery__rowtwo__profile">
+        <div className="discover__gallery">
+          {travelBrands.map((brand) => (
+            <div className="discover__gallery__profile" key={brand.name}>
+              <div className="discover__gallery__profile__header">
                 <img
-                  className="discover__profile-card__gallery__rowtwo__profile__image"
-                  src={profileimage}
+                  className="discover__gallery__profile__header__image"
+                  src={brand.profileImage}
                   alt="profileimage"
                 />
-                <h3 className="discover__profile-card__gallery__rowtwo__profile__name">
-                  Beautifuldestinations
+                <h3 className="discover__gallery__profile__header__name">
+                  {brand.name}
                 </h3>
-                <p className="discover__profile-card__gallery__rowtwo__profile__followers">
-                  145k followers
+                <p className="discover__gallery__profile__header__followers">
+                  {brand.followers} followers
                 </p>
                 <img
-                  className="discover__profile-card__gallery__rowtwo__profile__instagram"
-                  src={connect}
+                  className="discover__gallery__profile__header__instagram"
+                  src={instagramLogo}
                   alt="iglogo"
                 />
               </div>
 
-              <div className="discover__profile-card__gallery__rowtwo__post">
+              <div className="discover__gallery__profile__post">
                 <img
-                  className="discover__profile-card__gallery__rowtwo__post-image"
-                  src={images}
+                  className="discover__gallery__profile__post-image"
+                  src={brand.mainImage}
                   alt="images"
                 />
-                <p className="discover__profile-card__gallery__rowtwo__post-description">
-                  looking for
-                </p>
+                {/* <p className="discover__gallery__profile__post-description">
+                  {brand.description}
+                </p> */}
               </div>
             </div>
-
-            <div className="discover__profile-card__gallery__rowtwo">
-              <div className="discover__profile-card__gallery__rowtwo__profile">
-                <img
-                  className="discover__profile-card__gallery__rowtwo__profile__image"
-                  src={profileimage}
-                  alt="profileimage"
-                />
-                <h3 className="discover__profile-card__gallery__rowtwo__profile__name">
-                  Beautifuldestinations
-                </h3>
-                <p className="discover__profile-card__gallery__rowtwo__profile__followers">
-                  145k followers
-                </p>
-                <img
-                  className="discover__profile-card__gallery__rowtwo__profile__instagram"
-                  src={connect}
-                  alt="iglogo"
-                />
-              </div>
-
-              <div className="discover__profile-card__gallery__rowtwo__post">
-                <img
-                  className="discover__profile-card__gallery__rowtwo__post-image"
-                  src={images}
-                  alt="images"
-                />
-                <p className="discover__profile-card__gallery__rowtwo__post-description">
-                  looking for
-                </p>
-              </div>
-            </div>
-            <div className="discover__profile-card__gallery__rowtwo">
-              <div className="discover__profile-card__gallery__rowtwo__profile">
-                <img
-                  className="discover__profile-card__gallery__rowtwo__profile__image"
-                  src={profileimage}
-                  alt="profileimage"
-                />
-                <h3 className="discover__profile-card__gallery__rowtwo__profile__name">
-                  Beautifuldestinations
-                </h3>
-                <p className="discover__profile-card__gallery__rowtwo__profile__followers">
-                  145k followers
-                </p>
-                <img
-                  className="discover__profile-card__gallery__rowtwo__profile__instagram"
-                  src={connect}
-                  alt="iglogo"
-                />
-              </div>
-
-              <div className="discover__profile-card__gallery__rowtwo__post">
-                <img
-                  className="discover__profile-card__gallery__rowtwo__post-image"
-                  src={images}
-                  alt="images"
-                />
-                <p className="discover__profile-card__gallery__rowtwo__post-description">
-                  looking for
-                </p>
-              </div>
-            </div>
-            <div className="discover__profile-card__gallery__rowtwo">
-              <div className="discover__profile-card__gallery__rowtwo__profile">
-                <img
-                  className="discover__profile-card__gallery__rowtwo__profile__image"
-                  src={profileimage}
-                  alt="profileimage"
-                />
-                <h3 className="discover__profile-card__gallery__rowtwo__profile__name">
-                  Beautifuldestinations
-                </h3>
-                <p className="discover__profile-card__gallery__rowtwo__profile__followers">
-                  145k followers
-                </p>
-                <img
-                  className="discover__profile-card__gallery__rowtwo__profile__instagram"
-                  src={connect}
-                  alt="iglogo"
-                />
-              </div>
-
-              <div className="discover__profile-card__gallery__rowtwo__post">
-                <img
-                  className="discover__profile-card__gallery__rowtwo__post-image"
-                  src={images}
-                  alt="images"
-                />
-                <p className="discover__profile-card__gallery__rowtwo__post-description">
-                  looking for
-                </p>
-              </div>
-            </div>
-            <div className="discover__profile-card__gallery__rowtwo">
-              <div className="discover__profile-card__gallery__rowtwo__profile">
-                <img
-                  className="discover__profile-card__gallery__rowtwo__profile__image"
-                  src={profileimage}
-                  alt="profileimage"
-                />
-                <h3 className="discover__profile-card__gallery__rowtwo__profile__name">
-                  Beautifuldestinations
-                </h3>
-                <p className="discover__profile-card__gallery__rowtwo__profile__followers">
-                  145k followers
-                </p>
-                <img
-                  className="discover__profile-card__gallery__rowtwo__profile__instagram"
-                  src={connect}
-                  alt="iglogo"
-                />
-              </div>
-
-              <div className="discover__profile-card__gallery__rowtwo__post">
-                <img
-                  className="discover__profile-card__gallery__rowtwo__post-image"
-                  src={images}
-                  alt="images"
-                />
-                <p className="discover__profile-card__gallery__rowtwo__post-description">
-                  looking for
-                </p>
-              </div>
-            </div>
-            <div className="discover__profile-card__gallery__rowtwo">
-              <div className="discover__profile-card__gallery__rowtwo__profile">
-                <img
-                  className="discover__profile-card__gallery__rowtwo__profile__image"
-                  src={profileimage}
-                  alt="profileimage"
-                />
-                <h3 className="discover__profile-card__gallery__rowtwo__profile__name">
-                  Beautifuldestinations
-                </h3>
-                <p className="discover__profile-card__gallery__rowtwo__profile__followers">
-                  145k followers
-                </p>
-                <img
-                  className="discover__profile-card__gallery__rowtwo__profile__instagram"
-                  src={connect}
-                  alt="iglogo"
-                />
-              </div>
-
-              <div className="discover__profile-card__gallery__rowtwo__post">
-                <img
-                  className="discover__profile-card__gallery__rowtwo__post-image"
-                  src={images}
-                  alt="images"
-                />
-                <p className="discover__profile-card__gallery__rowtwo__post-description">
-                  looking for
-                </p>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </>
