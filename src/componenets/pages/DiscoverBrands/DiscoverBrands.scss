@@ -137,16 +137,31 @@
         flex-direction: column;
         align-items: center;
 
-        &-image {
+        &__image {
           width: 360px;
           height: 400px;
           padding: 8px;
-        }
 
-        &-description {
-          font-size: 16px;
-          font-weight: 400;
-          margin-left: 1rem;
+          &:hover + .discover__gallery__profile__post__back-content {
+            display: flex;
+            // opacity: 2;
+          }
+        }
+        &__back-content {
+          position: absolute;
+          width: 360px;
+          height: 410px;
+          background-color: white; /* Set white background */
+          display: none; /* Initially hide the back content */
+          justify-content: center;
+          color: black; /* Set text color */
+          transition: 10s; // Set transition effect on opacity change
+
+          &__description {
+            font-size: 16px;
+            font-weight: 400;
+            padding: 0.5rem;
+          }
         }
       }
     }

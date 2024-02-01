@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
 import React from "react";
+// import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./DiscoverBrands.scss";
 import instagramLogo from "../../../assets/images/Instagram_black.png";
 import logo from "../../../assets/images/Creativehub.png";
@@ -82,16 +85,18 @@ const DiscoverBrands = () => {
                   alt="iglogo"
                 />
               </div>
-
               <div className="discover__gallery__profile__post">
                 <img
-                  className="discover__gallery__profile__post-image"
+                  className="discover__gallery__profile__post__image"
                   src={brand.mainImage}
                   alt="images"
                 />
-                {/* <p className="discover__gallery__profile__post-description">
-                  {brand.description}
-                </p> */}
+                <div className="discover__gallery__profile__post__back-content">
+                  {/* Content for the back of the image */}
+                  <p className="discover__gallery__profile__post__back-content__description">
+                    {brand.description}
+                  </p>
+                </div>
               </div>
             </div>
           ))}
