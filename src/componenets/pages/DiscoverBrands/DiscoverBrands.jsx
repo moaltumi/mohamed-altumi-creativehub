@@ -11,6 +11,8 @@ import { Link } from "react-router-dom";
 
 const DiscoverBrands = () => {
   const [travelBrands, setTravelBrands] = useState([]);
+  const [selectedLocation, setSelectedLocation] = useState(""); // Default to an empty string to show all data initially
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -25,6 +27,15 @@ const DiscoverBrands = () => {
     fetchData();
   }, []);
 
+  const handleLocationChange = (event) => {
+    setSelectedLocation(event.target.value);
+  };
+
+  // Filter brands based on selectedLocation
+  const filteredBrands = selectedLocation
+    ? travelBrands.filter((brand) => brand.location === selectedLocation)
+    : travelBrands; // Show all data if no location is selected
+
   return (
     <>
       <div className="discover">
@@ -37,11 +48,13 @@ const DiscoverBrands = () => {
             />
           </Link>
 
-          {/* logo and filter bar */}
-
           <div className="discover__profile-card__rowone">
             <div className="discover__profile-card__rowone__select">
-              <select className="discover__profile-card__rowone__select-location">
+              <select
+                className="discover__profile-card__rowone__select-location"
+                value={selectedLocation}
+                onChange={handleLocationChange}
+              >
                 <option
                   className="discover__profile-card__rowone__select-location__option"
                   value="VANCOUVER"
@@ -114,7 +127,7 @@ const DiscoverBrands = () => {
         </div>
 
         <div className="discover__gallery">
-          {travelBrands.map((brand) => (
+          {filteredBrands.map((brand) => (
             <div className="discover__gallery__profile" key={brand.name}>
               <div className="discover__gallery__profile__header">
                 <span className="discover__gallery__profile__header">
