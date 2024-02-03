@@ -19,6 +19,7 @@
       &__select {
         display: flex;
         flex-direction: row;
+        align-items: center;
 
         &-location {
           background-image: url("../../../assets//images/brand_location\ 1.svg"),
@@ -32,8 +33,12 @@
           background-color: white;
           border-style: none;
           color: black;
-          font-size: 16px;
+          font-size: 14px;
           font-weight: 400;
+          align-items: center;
+          justify-content: center;
+          padding-left: 1.75rem;
+          appearance: none;
         }
         &-followers {
           background-image: url("../../../assets//images/followers.svg"),
@@ -49,6 +54,9 @@
           color: black;
           font-size: 16px;
           font-weight: 400;
+          appearance: none;
+          padding-left: 3.5rem;
+
           //   background-color: #f0f0f0;
         }
         &-budget {
@@ -65,16 +73,18 @@
           color: black;
           font-size: 16px;
           font-weight: 400;
+          appearance: none;
+          padding-left: 3.5rem;
         }
         &-search {
-          background-image: url("../../../assets/images/search\ 1.svg");
+          background-image: url("../../../assets/images/search2.svg");
           background-repeat: no-repeat;
           background-position: center;
           width: 40px;
           height: 40px;
           border-radius: 16px;
           border-style: none;
-          background-color: #7c55ff;
+          background-color: white;
         }
       }
 
@@ -94,41 +104,45 @@
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    padding: 1rem;
+    gap: 2rem;
 
     &__profile {
       display: flex;
       flex-direction: column;
-      margin-bottom: 2rem;
+      // margin-bottom: 2rem;
 
       &__header {
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
         border-style: none;
         // background-color: white;
         border-radius: 16px;
-        padding: 0.5rem;
-        width: 350px;
+        // width: 350px;
 
         &__image {
-          width: 40px;
-          height: 40px;
+          width: 50px;
+          height: 50px;
           border-radius: 50%;
+          padding: 0.5rem;
         }
         &__name {
-          font-size: 16px;
+          font-size: 14px;
           font-weight: 400;
         }
 
         &__followers {
-          font-size: 12px;
+          font-size: 14px;
           font-weight: 400;
-          color: grey;
+          color: black;
+          padding: 0.25rem;
         }
         &__instagram {
-          width: 40px;
-          height: 40px;
+          width: 30px;
+          height: 30px;
+          padding: 0.5rem;
         }
       }
 
@@ -148,6 +162,8 @@
           }
         }
         &__back-content {
+          display: flex;
+          flex-direction: column;
           position: absolute;
           width: 360px;
           height: 410px;
@@ -157,11 +173,86 @@
           color: black; /* Set text color */
           transition: 10s; // Set transition effect on opacity change
 
-          &__description {
-            font-size: 16px;
-            font-weight: 400;
+          &__rowone {
+            display: flex;
+            flex-direction: column;
             padding: 0.5rem;
+
+            &__description {
+              font-size: 12px;
+              font-weight: 400;
+              padding: 0.5rem;
+              border-left: 1px solid #7c55ff;
+            }
+
+            &__about {
+              font-size: 12px;
+              font-weight: 400;
+              padding: 0.5rem;
+              border-left: 1px solid #7c55ff;
+            }
           }
+
+          &__rowtwo {
+            display: flex;
+            flex-direction: column;
+            padding: 0.5rem;
+
+            &__budget {
+              font-size: 12px;
+              font-weight: 400;
+              border-left: 1px solid #7c55ff;
+              padding-left: 0.5rem;
+            }
+
+            &__reqfollowers {
+              font-size: 12px;
+              font-weight: 400;
+              border-left: 1px solid #7c55ff;
+              padding-left: 0.5rem;
+            }
+
+            &__link {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              margin-top: 1rem;
+              &__connect {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+                height: 40px;
+                width: 40px;
+              }
+
+              &__text {
+                font-size: 12px;
+                font-weight: 400;
+                color: grey;
+              }
+            }
+          }
+        }
+
+        &__pricing {
+          font-size: 12px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          padding: 0px 1rem;
+          gap: 1rem;
+        }
+        &__discover {
+          background-color: #7c55ff;
+          border: none;
+          font-family: sans-serif;
+          color: white;
+          border-radius: 8px;
+          font-size: 14px;
+          line-height: 18px;
+          font-weight: 600;
+          height: 50px;
+          width: 100px;
         }
       }
     }
