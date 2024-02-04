@@ -58,11 +58,23 @@ const Feeds = () => {
 
         <div className="profile-card">
           <div className="profile-card__rowone">
+            <Link
+              to="https://www.instagram.com/altumitravels/"
+              className="profile-card__rowone__info"
+            >
+              <img
+                className="profile-card__rowone__info__logo"
+                src={instagramlogo}
+              />
+              <p className="profile-card__rowone__info__text">altumitravels</p>
+            </Link>
+
             <img
               className="profile-card__rowone__image"
               src={profileimage}
               alt="Profile"
             />
+
             <div className="profile-card__rowone__stats">
               <p className="profile-card__rowone__stat-value">34</p>
               <p className="profile-card__rowone__stat-label">Posts</p>

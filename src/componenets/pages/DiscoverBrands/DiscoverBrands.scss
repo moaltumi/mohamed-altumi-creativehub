@@ -39,6 +39,10 @@
           justify-content: center;
           padding-left: 2rem;
           appearance: none;
+
+          &:hover {
+            border: 2px solid #7c55ff;
+          }
         }
         &-followers {
           background-image: url("../../../assets//images/followers.svg"),
@@ -56,6 +60,9 @@
           font-weight: 400;
           appearance: none;
           padding-left: 2.5rem;
+          &:hover {
+            border: 2px solid #7c55ff;
+          }
 
           //   background-color: #f0f0f0;
         }
@@ -75,6 +82,9 @@
           font-weight: 400;
           appearance: none;
           padding-left: 2rem;
+          &:hover {
+            border: 2px solid #7c55ff;
+          }
         }
         &-search {
           background-image: url("../../../assets/images/search2.svg");
@@ -104,8 +114,8 @@
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 1rem;
-    gap: 2rem;
+    // padding: 1rem;
+    gap: 1rem;
 
     &__profile {
       display: flex;

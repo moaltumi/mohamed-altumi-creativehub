@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./SignUpPage.scss";
 import logo from "../../../assets/images/Creativehub.png";
 import profileimage from "../../../assets/images/profileimage.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function SignUpPage() {
   const [userData, setUserDataLocal] = useState({
@@ -19,19 +19,16 @@ function SignUpPage() {
     }));
   };
 
-  const navigate = useNavigate();
-
   const saveUserData = () => {
     // Validation: Check if any field is empty before saving
     if (!userData.name || !userData.email || !userData.phone) {
-      alert("Please fill in all fields before proceeding.");
-      return;
+      //stay on the page and alert the user to fill in all fields
+      alert("Please fill in all fields");
+
+      //return to exit the function
     }
-
-    // Navigate to the next page with user data as state
-    navigate("/onboarding/Feeds", { state: { userData } });
+    return;
   };
-
   return (
     <>
       <div>
@@ -47,12 +44,11 @@ function SignUpPage() {
           and enhance your influencer collaboration experience.
         </p>
 
-        <img className="signup__image" src={profileimage} alt="profileimage" />
-        <input className="signup__image__button" type="file" />
-
         <form className="signup__form">
           <div className="signup__form__name">
-            <label className="signup__form__name__label">Name</label>
+            <label className="signup__form__name__label">
+              Instagram Username
+            </label>
             <input
               className="signup__form__name__input"
               type="text"
@@ -66,7 +62,7 @@ function SignUpPage() {
               <label className="signup__form__info__label">Email</label>
               <input
                 className="signup__form__info__input"
-                type="email"
+                type="text"
                 id="email"
                 value={userData.email}
                 onChange={handleInputChange}
@@ -85,11 +81,11 @@ function SignUpPage() {
             </div>
           </div>
         </form>
-        <div>
+        <Link to="/Onboarding/Feeds">
           <button className="signup__button" onClick={saveUserData}>
             Next
           </button>
-        </div>
+        </Link>
       </div>
     </>
   );

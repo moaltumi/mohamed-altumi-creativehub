@@ -96,13 +96,13 @@ const DiscoverBrands = () => {
                     className="discover__profile-card__rowone__select-location__option"
                     value="TORONTO"
                   >
-                    TORONTO
+                    TORONTO(SOON)
                   </option>
                   <option
                     className="discover__profile-card__rowone__select-location__option"
                     value="LOS ANGELES"
                   >
-                    LOS ANGELES
+                    LOS ANGELES(SOON)
                   </option>
                 </select>
               </div>
@@ -126,9 +126,9 @@ const DiscoverBrands = () => {
                   </option>
                   <option
                     className="discover__profile-card__rowone__select-followers__option"
-                    value="50000-100000"
+                    value="5000-100000"
                   >
-                    500-10000
+                    5000-10000
                   </option>
                 </select>
               </div>
