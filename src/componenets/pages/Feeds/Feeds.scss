@@ -5,14 +5,34 @@
 .single-feed {
   width: 100%;
   background-image: url("../../../assets//images/backgroundimage.png");
-  height: 150vh;
-  // background-repeat: repeat;
+  height: 240vh;
+  background-repeat: repeat;
   background-size: cover;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    &__discover {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      &__icon {
+        width: 50px;
+        height: 50px;
+        margin-top: 1rem;
+        margin-right: 4rem;
+      }
+    }
+  }
 
   .profile-card {
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     margin-bottom: 2rem;
 
@@ -28,24 +48,21 @@
         flex-direction: column-reverse;
         align-items: center;
         padding-left: 2rem;
-
-        &__badge {
-          width: 30px;
-          height: 30px;
-        }
       }
     }
 
-    &__rowtwo {
+    &__rowone {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
-      border-right: 2px solid rgba(124, 85, 255, 1);
+
       &__image {
-        width: 100px;
+        width: 80px;
         height: 80px;
         border-radius: 50%;
+        border-color: #7c55ff;
+        border-style: solid;
       }
 
       &__stats {
@@ -58,35 +75,8 @@
       }
     }
 
-    &__rowthree {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-
-      &__pricing {
-        font-size: 12px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        padding: 0px 1rem;
-        gap: 1rem;
-      }
-      &__discover {
-        background-color: #7c55ff;
-        border: none;
-        font-family: sans-serif;
-        color: white;
-        border-radius: 8px;
-        font-size: 14px;
-        line-height: 18px;
-        font-weight: 600;
-        height: 50px;
-        width: 100px;
-      }
-    }
-
     // discover button
-    &__rowfour {
+    &__rowthree {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -132,6 +122,7 @@
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    gap: 1rem;
 
     &__image {
       width: 360px;

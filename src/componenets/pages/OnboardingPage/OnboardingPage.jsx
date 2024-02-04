@@ -2,6 +2,8 @@ import React from "react";
 import "./Onboarding.scss";
 import logo from "../../../assets/images/Creativehub.png";
 import { Link } from "react-router-dom";
+import creator from "../../../assets/images/creator.svg";
+import business from "../../../assets/images/business.svg";
 
 function OnboardingPage() {
   return (
@@ -11,19 +13,27 @@ function OnboardingPage() {
       </Link>
 
       <div className="onboarding">
-        <h1 className="onboarding__title">Welcome to Creativehub</h1>
+        <h1 className="onboarding__title">Choose your profile type</h1>
         <h2 className="onboarding__subtitle">
-          Connect with Influencers to Skyrocket Your Product's Reach
+          Choose your experience by selecting the profile type
         </h2>
-        <Link to="./Feeds">
-          <button className="onboarding__button">
-            Get Started With Instagram
-          </button>
-        </Link>
-        <p className="onboarding__text">
-          Already have an account?{" "}
-          <Link className="onboarding__text__signin">Sign in</Link>
-        </p>
+        <div className="onboarding__profile">
+          <Link to="/signup" className="onboarding__profile__option">
+            {/* <div className="onboarding__profile__option"> */}
+            <button className="onboarding__profile__option__btn">
+              <img src={creator} alt="creator" />
+            </button>
+            <p className="onboarding__profile__option__text">Creator</p>
+            {/* </div> */}
+          </Link>
+
+          <div className="onboarding__profile__option">
+            <button className="onboarding__profile__option__btn">
+              <img src={business} alt="business" />
+            </button>
+            <p className="onboarding__profile__option__text">Business</p>
+          </div>
+        </div>
       </div>
     </>
   );
