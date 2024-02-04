@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Feeds.scss";
+import instagramlogo from "../../../assets/images/instagramblack2.svg";
 import axios from "axios";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../../assets/images/Creativehub.png";
@@ -49,7 +50,7 @@ const Feeds = () => {
               </p>
               <img
                 className="profile-card__rowone__header__badge"
-                src=""
+                src={instagramlogo}
                 alt="iglogo"
               />
             </div>

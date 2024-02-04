@@ -24,14 +24,15 @@
       &__header {
         display: flex;
         font-size: 12px;
-        /* flex-direction: column; */
-        padding: 0px 1rem;
         gap: 2rem;
-        justify-content: space-around;
-        align-items: baseline;
-        position: relative;
-        left: 18rem;
-        bottom: 2rem;
+        flex-direction: column-reverse;
+        align-items: center;
+        padding-left: 2rem;
+
+        &__badge {
+          width: 30px;
+          height: 30px;
+        }
       }
     }
 

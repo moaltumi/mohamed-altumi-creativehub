@@ -11,7 +11,12 @@ import { Link } from "react-router-dom";
 
 const DiscoverBrands = () => {
   const [travelBrands, setTravelBrands] = useState([]);
-  const [selectedLocation, setSelectedLocation] = useState(""); // Default to an empty string to show all data initially
+  const [selectedLocation, setSelectedLocation] = useState("VANCOUVER");
+  const [selectedFollowers, setSelectedFollowers] = useState({
+    min: 0,
+    max: 10000,
+  });
+  const [selectedBudget, setSelectedBudget] = useState({ min: 0, max: 10000 });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -31,178 +36,209 @@ const DiscoverBrands = () => {
     setSelectedLocation(event.target.value);
   };
 
-  // Filter brands based on selectedLocation
-  const filteredBrands = selectedLocation
-    ? travelBrands.filter((brand) => brand.location === selectedLocation)
-    : travelBrands; // Show all data if no location is selected
+  const handleFollowersChange = (event) => {
+    const selectedValue = event.target.value;
+    const [min, max] = selectedValue.split("-").map(Number);
 
-  return (
-    <>
-      <div className="discover">
-        <div className="discover__profile-card">
-          <Link to="/">
-            <img
-              className="discover__profile-card__logo"
-              src={logo}
-              alt="logo"
-            />
-          </Link>
+    setSelectedFollowers({ min, max });
+  };
 
-          <div className="discover__profile-card__rowone">
-            <div className="discover__profile-card__rowone__select">
-              <select
-                className="discover__profile-card__rowone__select-location"
-                value={selectedLocation}
-                onChange={handleLocationChange}
-              >
-                <option
-                  className="discover__profile-card__rowone__select-location__option"
-                  value="VANCOUVER"
-                >
-                  VANCOUVER
-                </option>
-                <option
-                  className="discover__profile-card__rowone__select-location__option"
-                  value="TORONTO"
-                >
-                  TORONTO
-                </option>
-                <option
-                  className="discover__profile-card__rowone__select-location__option"
-                  value="LOS ANGELES"
-                >
-                  LOS ANGELES
-                </option>
-              </select>
-            </div>
-            <div className="discover__profile-card__rowone__select">
-              <select className="discover__profile-card__rowone__select-followers">
-                <option
-                  className="discover__profile-card__rowone__select-followers__option"
-                  value="1000"
-                >
-                  1k
-                </option>
-                <option
-                  className="discover__profile-card__rowone__select-followers__option"
-                  value="5000"
-                >
-                  5k
-                </option>
-                <option
-                  className="discover__profile-card__rowone__select-followers__option"
-                  value="10000"
-                >
-                  10k
-                </option>
-              </select>
-            </div>
+  const handleBudgetChange = (event) => {
+    const selectedValue = event.target.value;
+    const [min, max] = selectedValue.split("-").map(Number);
 
-            <div className="discover__profile-card__rowone__select">
-              <select className="discover__profile-card__rowone__select-budget">
-                <option
-                  className="discover__profile-card__rowone__select-budget__option"
-                  value="1000"
-                >
-                  $100
-                </option>
-                <option
-                  className="discover__profile-card__rowone__select-budget__option"
-                  value="5000"
-                >
-                  $500
-                </option>
-                <option
-                  className="discover__profile-card__rowone__select-budget__option"
-                  value="10000"
-                >
-                  $1000
-                </option>
-              </select>
-            </div>
-            <div className="discover__profile-card__rowone__select">
-              <button className="discover__profile-card__rowone__select-search"></button>
-            </div>
-          </div>
-        </div>
+    setSelectedBudget({ min, max });
+  };
 
-        <div className="discover__gallery">
-          {filteredBrands.map((brand) => (
-            <div className="discover__gallery__profile" key={brand.name}>
-              <div className="discover__gallery__profile__header">
-                <span className="discover__gallery__profile__header">
-                  <img
-                    className="discover__gallery__profile__header__image"
-                    src={brand.profile_image}
-                    alt="profileimage"
-                  />
-                  <h3 className="discover__gallery__profile__header__name">
-                    {brand.name}
-                  </h3>
-                </span>
-                <span className="discover__gallery__profile__header">
-                  <p className="discover__gallery__profile__header__followers">
-                    {brand.brand_followers} followers
-                  </p>
-                  <Link to={brand.igurl}>
-                    <img
-                      className="discover__gallery__profile__header__instagram"
-                      src={instagramLogo}
-                      alt="iglogo"
-                    />
-                  </Link>
-                </span>
+  if (selectedLocation === "TORONTO" || selectedLocation === "LOS ANGELES") {
+    return <h1>Sorry, we are not currently operating in this location</h1>;
+  } else if (selectedLocation === "VANCOUVER") {
+    const filteredBrands = travelBrands.filter((brand) => {
+      const followersInRange =
+        brand.followers_required >= selectedFollowers.min &&
+        brand.followers_required <= selectedFollowers.max;
+
+      const budgetInRange =
+        brand.budget >= selectedBudget.min &&
+        brand.budget <= selectedBudget.max;
+
+      return (
+        brand.location === selectedLocation && followersInRange && budgetInRange
+      );
+    });
+
+    return (
+      <>
+        <div className="discover">
+          <div className="discover__profile-card">
+            <Link to="/">
+              <img
+                className="discover__profile-card__logo"
+                src={logo}
+                alt="logo"
+              />
+            </Link>
+
+            <div className="discover__profile-card__rowone">
+              <div className="discover__profile-card__rowone__select">
+                <select
+                  className="discover__profile-card__rowone__select-location"
+                  value={selectedLocation}
+                  onChange={handleLocationChange}
+                >
+                  <option
+                    className="discover__profile-card__rowone__select-location__option"
+                    value="VANCOUVER"
+                  >
+                    VANCOUVER
+                  </option>
+                  <option
+                    className="discover__profile-card__rowone__select-location__option"
+                    value="TORONTO"
+                  >
+                    TORONTO
+                  </option>
+                  <option
+                    className="discover__profile-card__rowone__select-location__option"
+                    value="LOS ANGELES"
+                  >
+                    LOS ANGELES
+                  </option>
+                </select>
+              </div>
+              <div className="discover__profile-card__rowone__select">
+                <select
+                  className="discover__profile-card__rowone__select-followers"
+                  value={`${selectedFollowers.min}-${selectedFollowers.max}`}
+                  onChange={handleFollowersChange}
+                >
+                  <option
+                    className="discover__profile-card__rowone__select-followers__option"
+                    value="100 - 1000"
+                  >
+                    100-1000
+                  </option>
+                  <option
+                    className="discover__profile-card__rowone__select-followers__option"
+                    value="1000-5000"
+                  >
+                    1000-5000
+                  </option>
+                  <option
+                    className="discover__profile-card__rowone__select-followers__option"
+                    value="50000-100000"
+                  >
+                    500-10000
+                  </option>
+                </select>
               </div>
 
-              <div className="discover__gallery__profile__post">
-                <img
-                  className="discover__gallery__profile__post__image"
-                  src={brand.main_image}
-                  alt="images"
-                />
-                <div className="discover__gallery__profile__post__back-content">
-                  {/* Content for the back of the image */}
-                  <div className="discover__gallery__profile__post__back-content__rowone">
-                    <p className="discover__gallery__profile__post__back-content__rowone__about">
-                      About: <br />
-                      {brand.about}
-                    </p>{" "}
-                    <p className="discover__gallery__profile__post__back-content__rowone__description">
-                      Job Description: <br />
-                      {brand.job_description}
-                    </p>
-                  </div>
-                  <div className="discover__gallery__profile__post__back-content__rowtwo">
-                    <p className="discover__gallery__profile__post__back-content__rowtwo__budget">
-                      {" "}
-                      Budget: {brand.budget}
-                    </p>
-                    <p className="discover__gallery__profile__post__back-content__rowtwo__reqfollowers">
-                      {" "}
-                      Required followers: {brand.followers_required}
-                    </p>
+              <div className="discover__profile-card__rowone__select">
+                <select
+                  className="discover__profile-card__rowone__select-budget"
+                  value={`${selectedBudget.min}-${selectedBudget.max}`}
+                  onChange={handleBudgetChange}
+                >
+                  <option
+                    className="discover__profile-card__rowone__select-budget__option"
+                    value="100-500"
+                  >
+                    $100-$500
+                  </option>
+                  <option
+                    className="discover__profile-card__rowone__select-budget__option"
+                    value="500-1000"
+                  >
+                    $500-$1000
+                  </option>
+                  <option
+                    className="discover__profile-card__rowone__select-budget__option"
+                    value="1000-5000"
+                  >
+                    $1000-$5000
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
 
-                    <div className="discover__gallery__profile__post__back-content__rowtwo__link">
-                      <p className="discover__gallery__profile__post__back-content__rowtwo__link__text">
-                        Connect Now
+          <div className="discover__gallery">
+            {filteredBrands.map((brand) => (
+              <div className="discover__gallery__profile" key={brand.name}>
+                <div className="discover__gallery__profile__header">
+                  <span className="discover__gallery__profile__header">
+                    <img
+                      className="discover__gallery__profile__header__image"
+                      src={brand.profile_image}
+                      alt="profileimage"
+                    />
+                    <h3 className="discover__gallery__profile__header__name">
+                      {brand.name}
+                    </h3>
+                  </span>
+                  <span className="discover__gallery__profile__header">
+                    <p className="discover__gallery__profile__header__followers">
+                      {brand.brand_followers} followers
+                    </p>
+                    <Link to={brand.igurl}>
+                      <img
+                        className="discover__gallery__profile__header__instagram"
+                        src={instagramLogo}
+                        alt="iglogo"
+                      />
+                    </Link>
+                  </span>
+                </div>
+
+                <div className="discover__gallery__profile__post">
+                  <img
+                    className="discover__gallery__profile__post__image"
+                    src={brand.main_image}
+                    alt="images"
+                  />
+                  <div className="discover__gallery__profile__post__back-content">
+                    {/* Content for the back of the image */}
+                    <div className="discover__gallery__profile__post__back-content__rowone">
+                      <p className="discover__gallery__profile__post__back-content__rowone__about">
+                        About: <br />
+                        {brand.about}
+                      </p>{" "}
+                      <p className="discover__gallery__profile__post__back-content__rowone__description">
+                        Job Description: <br />
+                        {brand.job_description}
                       </p>
-                      <Link to={brand.igurl}>
-                        <img
-                          className="discover__gallery__profile__post__back-content__rowtwo__link__connect"
-                          src={connect}
-                          alt="connect"
-                        />
-                      </Link>
+                    </div>
+                    <div className="discover__gallery__profile__post__back-content__rowtwo">
+                      <p className="discover__gallery__profile__post__back-content__rowtwo__budget">
+                        {" "}
+                        Budget: ${brand.budget}
+                      </p>
+                      <p className="discover__gallery__profile__post__back-content__rowtwo__reqfollowers">
+                        {" "}
+                        Minmum Required followers: {brand.followers_required}
+                      </p>
+
+                      <div className="discover__gallery__profile__post__back-content__rowtwo__link">
+                        <p className="discover__gallery__profile__post__back-content__rowtwo__link__text">
+                          Connect Now
+                        </p>
+                        <Link to={brand.igurl}>
+                          <img
+                            className="discover__gallery__profile__post__back-content__rowtwo__link__connect"
+                            src={connect}
+                            alt="connect"
+                          />
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  }
 };
-
 export default DiscoverBrands;
