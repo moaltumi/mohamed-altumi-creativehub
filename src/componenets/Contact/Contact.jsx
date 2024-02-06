@@ -25,7 +25,7 @@ const Contact = () => {
         </div>
         <div className="contact__card__contact__info">
           <p className="contact__card__contact__info__title">Phone</p>
-          <p className="contact__card__contact__info__subtitle">647-567-1234</p>
+          <p className="contact__card__contact__info__subtitle">778-838-1730</p>
         </div>
       </div>
     </div>

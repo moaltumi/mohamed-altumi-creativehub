@@ -20,12 +20,8 @@ function SignUpPage() {
   };
 
   const saveUserData = () => {
-    // Validation: Check if any field is empty before saving
     if (!userData.name || !userData.email || !userData.phone) {
-      //stay on the page and alert the user to fill in all fields
       alert("Please fill in all fields");
-
-      //return to exit the function
     }
     return;
   };

@@ -185,11 +185,11 @@
           position: absolute;
           width: 360px;
           height: 410px;
-          background-color: white; /* Set white background */
-          display: none; /* Initially hide the back content */
+          background-color: white;
+          display: none;
           justify-content: center;
-          color: black; /* Set text color */
-          transition: 10s; // Set transition effect on opacity change
+          color: black;
+          transition: 10s;
 
           &__rowone {
             display: flex;

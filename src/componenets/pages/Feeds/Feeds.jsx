@@ -18,7 +18,6 @@ const Feeds = () => {
         "https://v1.nocodeapi.com/moaltumi/instagram/LjiPFPDYOXVoZBBQ"
       );
 
-      // Filter only the data with media_type === "IMAGE"
       const images = response.data.data.filter(
         (post) =>
           post.media_type === "IMAGE" || post.media_type === "CAROUSEL_ALBUM"
@@ -102,9 +101,6 @@ const Feeds = () => {
             collaborations now!
           </p>
           <div className="profile-card__rowthree__buttons">
-            {/* <button className="profile-card__rowtwo__buttons__upload">
-              Upload Images
-            </button> */}
             <button
               className="profile-card__rowthree__buttons__upload-ig"
               onClick={handleUploadFromInstagram}
