@@ -1,4 +1,3 @@
-import react from "react";
 import "./Contact.scss";
 import logo from "../../assets/images/Creativehub.png";
 import { Link } from "react-router-dom";

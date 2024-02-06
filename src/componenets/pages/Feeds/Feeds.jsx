@@ -9,7 +9,6 @@ import profileimage from "../../../assets/images/IMG_1934.jpg";
 
 const Feeds = () => {
   const [imageData, setImageData] = useState([]);
-  const [userData, setUserData] = useState({});
   const [apiCalled, setApiCalled] = useState(false);
 
   const fetchData = async () => {
@@ -63,6 +62,7 @@ const Feeds = () => {
             >
               <img
                 className="profile-card__rowone__info__logo"
+                alt="iglogo"
                 src={instagramlogo}
               />
               <p className="profile-card__rowone__info__text">altumitravels</p>
@@ -116,7 +116,7 @@ const Feeds = () => {
               <img
                 className="profile-card__galery__image"
                 src={image.media_url}
-                // alt={`Image ${index + 1}`}
+                alt="instagram post"
               />
             </div>
           ))}

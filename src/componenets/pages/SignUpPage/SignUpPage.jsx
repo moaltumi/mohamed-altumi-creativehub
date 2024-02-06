@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./SignUpPage.scss";
 import logo from "../../../assets/images/Creativehub.png";
-import profileimage from "../../../assets/images/profileimage.png";
 import { Link } from "react-router-dom";
 
 function SignUpPage() {
