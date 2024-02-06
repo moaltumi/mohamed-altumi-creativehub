@@ -42,7 +42,7 @@ const Feeds = () => {
       <div className="single-feed">
         <div className="single-feed__header">
           <Link to="/">
-            <img className="logo" src={logo} alt="logo" />
+            <img className="single-feed__header__logo" src={logo} alt="logo" />
           </Link>
 
           <div className="single-feed__header__discover">

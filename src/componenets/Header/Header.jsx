@@ -16,25 +16,21 @@ const Header = () => {
 
         <ul className="navbar__menu">
           <li className="navbar__item">
-            <a className="navbar__link-active" href="#">
-              Home
-            </a>
+            <a className="navbar__link-active">Home</a>
           </li>
           <li className="navbar__item">
-            <a className="navbar__link" href="#">
+            <Link to="/about " className="navbar__link">
               About
-            </a>
+            </Link>
           </li>
           <li className="navbar__item">
-            <a className="navbar__link" href="#">
+            <Link to="/Contact" className="navbar__link">
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
         <Link to="/Onboarding">
-          <button className="navbar__button" href="#">
-            Get Started
-          </button>
+          <button className="navbar__button">Get Started</button>
         </Link>
       </nav>
 
@@ -49,13 +45,6 @@ const Header = () => {
           <Link to="/Onboarding">
             <button className="hero__col__one__button">Get Started</button>
           </Link>
-          <p className="hero__col__one__signup">
-            looking to Collab with Brands?
-            <Link to="/Signup" className="hero__col__one__signup-link">
-              {" "}
-              Signup as an influencer{" "}
-            </Link>
-          </p>
         </div>
 
         <div className="hero__col__two">

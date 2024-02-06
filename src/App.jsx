@@ -6,6 +6,8 @@ import OnboardingPage from "./componenets/pages/OnboardingPage/OnboardingPage.js
 import Feeds from "./componenets/pages/Feeds/Feeds.jsx";
 import SignUpPage from "./componenets/pages/SignUpPage/SignUpPage.jsx";
 import DiscoverBrands from "./componenets/pages/DiscoverBrands/DiscoverBrands.jsx";
+import About from "./componenets/About/About.jsx";
+import Contact from "./componenets/Contact/Contact.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
         <Route path="Onboarding/Feeds" element={<Feeds />} />
         <Route path="/Signup" element={<SignUpPage />} />
         <Route path="/DiscoverBrands" element={<DiscoverBrands />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Contact" element={<Contact />} />
       </Routes>
     </BrowserRouter>
   );

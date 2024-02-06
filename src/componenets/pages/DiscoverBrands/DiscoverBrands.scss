@@ -6,15 +6,22 @@
   &__profile-card {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-end;
+    justify-content: space-between;
+
+    &__logo {
+      margin-top: 2rem;
+      margin-left: 10rem;
+      width: 230px;
+      height: 30px;
+    }
 
     &__rowone {
       display: flex;
       flex-direction: row;
       border-radius: 16px;
-      gap: 2rem;
       margin-top: 2rem;
+      margin-right: 10rem;
+      gap: 2rem;
 
       &__select {
         display: flex;
@@ -109,7 +116,7 @@
     }
   }
   &__gallery {
-    margin-top: 2rem;
+    margin-top: 4rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -164,6 +171,7 @@
         &__image {
           width: 360px;
           height: 400px;
+
           padding: 8px;
 
           &:hover + .discover__gallery__profile__post__back-content {

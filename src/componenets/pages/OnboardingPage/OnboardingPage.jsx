@@ -19,12 +19,10 @@ function OnboardingPage() {
         </h2>
         <div className="onboarding__profile">
           <Link to="/signup" className="onboarding__profile__option">
-            {/* <div className="onboarding__profile__option"> */}
             <button className="onboarding__profile__option__btn">
               <img src={creator} alt="creator" />
             </button>
             <p className="onboarding__profile__option__text">Creator</p>
-            {/* </div> */}
           </Link>
 
           <div className="onboarding__profile__option">
