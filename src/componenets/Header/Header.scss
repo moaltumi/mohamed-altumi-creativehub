@@ -1,85 +1,63 @@
+@use "../../assets/styles/partials/font" as *;
+@use "../../assets/styles/partials/mixins" as *;
+@use "../../assets/styles/partials/variables" as *;
+
 .header {
-  background-image: url("../../assets//images/backgroundimage.png");
+  background-color: #ddffff;
   width: 100%;
-  height: 80vh;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
-.navbar {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-
-  &__menu {
+  .navbar {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
-    height: 60px;
-    list-style-type: none;
-  }
-  &__item {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 0 40px;
-    height: 60px;
-    padding-left: 1rem;
-  }
-  &__logo {
-    width: 230px;
-    height: 30px;
-  }
 
-  &__link-active {
-    list-style-type: none;
-    text-decoration: none;
-    color: black;
-    font-size: 20px;
-    font-weight: 600;
-  }
-  &__link {
-    list-style-type: none;
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-    font-weight: 400;
-  }
-  &__button {
-    background-color: #7c55ff;
-    border: none;
-    font-family: sans-serif;
-    border-radius: 26px;
-    color: white;
-    font-size: 14px;
-    line-height: 18px;
-    font-weight: 400;
-    height: 40px;
-    width: 130px;
-  }
-}
-.hero {
-  display: flex;
-  flex-direction: row;
-  margin-left: 12rem;
-  margin-top: 5rem;
-
-  &__col__one {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-
-    &__title {
-      width: 80%;
-      font-size: 4rem;
-      font-weight: 600;
-      margin-bottom: 2rem;
-      font-family: sans-serif;
+    &__menu {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 60px;
+      list-style-type: none;
     }
-    &__subtitle {
+    &__item {
+      display: none;
+      @include tablet {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0 40px;
+        height: 60px;
+        padding-left: 1rem;
+      }
+      @include desktop {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 0 40px;
+        height: 60px;
+        padding-left: 1rem;
+      }
+    }
+
+    &__logo {
+      width: 230px;
+      height: 30px;
+    }
+
+    &__link-active {
+      list-style-type: none;
+      text-decoration: none;
+      color: black;
       font-size: 20px;
+      font-weight: 600;
+    }
+    &__link {
+      list-style-type: none;
+      text-decoration: none;
+      color: black;
+      font-size: 16px;
       font-weight: 400;
-      margin-bottom: 2rem;
     }
     &__button {
       background-color: #7c55ff;
@@ -93,28 +71,118 @@
       height: 40px;
       width: 130px;
     }
-    &__signup {
-      font-size: 16px;
-      font-weight: 400;
-      margin-top: 2rem;
-
-      &-link {
-        text-decoration: none;
-        color: #7c55ff;
-        font-size: 16px;
-        font-weight: 600;
-        text-decoration: underline;
-      }
-    }
   }
-  &__col__two {
+  .hero {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    width: 50%;
-    &__image {
-      width: 80%;
-      height: 50vh;
+    width: 90%;
+    padding: 1rem 0rem 1rem 1rem;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    &__col__one {
+      display: flex;
+      flex-direction: column;
+
+      @include tablet {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+      @include desktop {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+
+      &__title {
+        width: 100%;
+        font-size: 1.5rem;
+        font-weight: 600;
+        font-family: sans-serif;
+
+        @include tablet {
+          font-size: 2rem;
+          width: 60%;
+        }
+
+        @include desktop {
+          font-size: 2rem;
+          width: 60%;
+        }
+      }
+
+      &__subtitle {
+        width: 100%;
+        font-size: 12px;
+        font-weight: 400;
+        @include tablet {
+          width: 80%;
+        }
+        @include desktop {
+          width: 80%;
+        }
+      }
+      &__button {
+        background-color: #7c55ff;
+        border: none;
+        font-family: sans-serif;
+        border-radius: 26px;
+        color: white;
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 400;
+        height: 40px;
+        width: 130px;
+      }
+      &__signup {
+        font-size: 16px;
+        font-weight: 400;
+
+        &-link {
+          text-decoration: none;
+          color: #7c55ff;
+          font-size: 16px;
+          font-weight: 600;
+          text-decoration: underline;
+        }
+      }
+    }
+    &__col__two {
+      display: flex;
+      flex-direction: row;
+
+      @include tablet {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      @include desktop {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        margin-left: 1rem;
+      }
+
+      &__image {
+        width: 150px;
+        height: 150px;
+
+        @include tablet {
+          width: 200px;
+          height: 200px;
+        }
+
+        @include desktop {
+          width: 230px;
+          height: 230px;
+        }
+      }
     }
   }
 }

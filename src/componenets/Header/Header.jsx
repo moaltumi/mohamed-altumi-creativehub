@@ -3,8 +3,6 @@ import "./Header.scss";
 import logo from "../../assets/images/Creativehub.png";
 import hero from "../../assets/images/heroimage.png";
 import { Link } from "react-router-dom";
-import Onboarding from "../pages/OnboardingPage/OnboardingPage";
-import axios from "axios";
 
 const Header = () => {
   return (
