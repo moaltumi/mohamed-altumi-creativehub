@@ -7,30 +7,30 @@ const Contact = () => {
   return (
     <>
       <div className="contact">
-        <nav className="navbar">
+        <nav className="contact__navbar">
           <Link to="/">
-            <img className="navbar__logo" src={logo} alt="logo" />
+            <img className="contact__navbar__logo" src={logo} alt="logo" />
           </Link>
 
-          <ul className="navbar__menu">
-            <li className="navbar__item">
-              <Link to="/" className="navbar__link">
+          <ul className="contact__navbar__menu">
+            <li className="contact__navbar__item">
+              <Link to="/" className="contact__navbar__link">
                 Home
               </Link>
             </li>
-            <li className="navbar__item">
-              <Link to="/about " className="navbar__link">
+            <li className="contact__navbar__item">
+              <Link to="/about " className="contact__navbar__link">
                 About
               </Link>
             </li>
-            <li className="navbar__item">
-              <Link to="/Contact" className="navbar__link-active">
+            <li className="contact__navbar__item">
+              <Link to="/Contact" className="contact__navbar__link-active">
                 Contact
               </Link>
             </li>
           </ul>
-          <Link to="/Onboarding">
-            <button className="navbar__button">Get Started</button>
+          <Link className="contact__navbar__link" to="/Onboarding">
+            <button className="contact__navbar__button">Get Started</button>
           </Link>
         </nav>
 

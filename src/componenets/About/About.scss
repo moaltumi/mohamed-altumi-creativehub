@@ -4,170 +4,149 @@
 
 .about {
   display: flex;
-  flex-direction: row;
-}
-.navbar {
-  display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin: 1rem;
 
-  &__menu {
+  @include tablet {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    flex-direction: column;
     align-items: center;
-    list-style-type: none;
-    font-family: "Avenir Next";
-    font-size: 12px;
-    font-weight: 400;
+    justify-content: center;
+  }
+
+  &__navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     @include tablet {
-      font-size: 14px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
     }
 
-    @include tablet {
-      font-size: 14px;
+    &__logo {
+      width: 230px;
+      height: 30px;
     }
 
-    @include desktop {
-      font-size: 16px;
+    &__menu {
+      display: none;
+      @include tablet {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 60px;
+        list-style-type: none;
+      }
     }
-
     &__item {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
       padding: 0 40px;
+      height: 60px;
+      padding-left: 1rem;
+    }
+
+    &__link-active {
+      list-style-type: none;
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    &__link {
+      list-style-type: none;
+      text-decoration: none;
+      color: black;
+      font-size: 16px;
+      font-weight: 400;
+
+      @include tablet {
+        list-style-type: none;
+        text-decoration: none;
+      }
+    }
+    &__button {
+      display: none;
+
+      @include tablet {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #7c55ff;
+        border: none;
+        font-family: sans-serif;
+        border-radius: 26px;
+        color: white;
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 400;
+        height: 40px;
+        width: 130px;
+        list-style-type: none;
+        text-decoration: none;
+      }
     }
   }
-  &__logo {
-    width: 230px;
-    height: 30px;
-  }
-  &__link-active {
-    list-style-type: none;
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-    font-weight: 600;
-  }
-  &__link {
-    list-style-type: none;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 400;
-  }
-
-  &__button {
-    background-color: #7c55ff;
-    border: none;
-    border-radius: 26px;
-    color: white;
-    font-size: 14px;
-    font-weight: 400;
-    height: 40px;
-    width: 130px;
+  &__card {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid silver;
+    border-radius: 40px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    margin: 2rem;
 
     @include tablet {
-      width: 130px;
+      width: 70%;
     }
 
     @include desktop {
-      width: 180px;
+      width: 50%;
+    }
+
+    &__title {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20px;
+      border-bottom: 4px solid #7c55ff;
+      padding: 1rem;
+
+      @include tablet {
+        font-size: 30px;
+      }
+
+      @include desktop {
+        font-size: 36px;
+      }
+    }
+
+    &__subtitle {
+      width: 400px;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 28px;
+      text-align: center;
+      color: grey;
+      width: 90%;
+
+      @include tablet {
+        font-size: 16px;
+        line-height: 40px;
+      }
+
+      @include desktop {
+        font-size: 24px;
+        line-height: 40px;
+      }
     }
   }
 }
-
-// .navbar {
-//   display: flex;
-//   justify-content: space-around;
-//   align-items: center;
-
-//   &__menu {
-//     display: flex;
-//     justify-content: space-evenly;
-//     align-items: center;
-//     height: 60px;
-//     list-style-type: none;
-//   }
-//   &__item {
-//     display: flex;
-//     justify-content: space-evenly;
-//     align-items: center;
-//     padding: 0 40px;
-//     height: 60px;
-//     padding-left: 1rem;
-//   }
-//   &__logo {
-//     width: 230px;
-//     height: 30px;
-//   }
-
-//   &__link-active {
-//     list-style-type: none;
-//     text-decoration: none;
-//     color: black;
-//     font-size: 20px;
-//     font-weight: 600;
-//   }
-//   &__link {
-//     list-style-type: none;
-//     text-decoration: none;
-//     color: black;
-//     font-size: 16px;
-//     font-weight: 400;
-//   }
-//   &__button {
-//     background-color: #7c55ff;
-//     border: none;
-//     font-family: sans-serif;
-//     border-radius: 26px;
-//     color: white;
-//     font-size: 14px;
-//     line-height: 18px;
-//     font-weight: 400;
-//     height: 40px;
-//     width: 130px;
-//   }
-// }
-
-// .about {
-//   display: flex;
-//   flex-direction: column;
-
-//   &__logo {
-//     margin-top: 2rem;
-//     margin-left: 10rem;
-//     width: 230px;
-//     height: 30px;
-//   }
-
-//   &__card {
-//     background-color: #fff;
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     border: 1px solid silver;
-//     border-radius: 40px;
-//     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-//     width: 668px;
-//     height: 550px;
-//     margin: 0 auto;
-//     margin-top: 5rem;
-
-//     &__title {
-//       font-size: 30px;
-//       font-weight: 600;
-//       line-height: 20px;
-//       margin-top: 3rem;
-//       border-bottom: 4px solid #7c55ff;
-//       padding-bottom: 1rem;
-//     }
-
-//     &__subtitle {
-//       width: 400px;
-//       font-size: 20px;
-//       font-weight: 400;
-//       line-height: 28px;
-//       text-align: center;
-//       color: grey;
-//     }
-//   }
-// }
