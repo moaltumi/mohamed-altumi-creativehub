@@ -7,33 +7,43 @@ import business from "../../../assets/images/business.svg";
 
 function OnboardingPage() {
   return (
-    <>
-      <Link to="/">
-        <img className="logo" src={logo} alt="logo" />
-      </Link>
+    <div className="onboarding">
+      <div className="onboarding__logo">
+        <Link to="/">
+          <img className="onboarding__logo__icon" src={logo} alt="logo" />
+        </Link>
+      </div>
 
-      <div className="onboarding">
-        <h1 className="onboarding__title">Choose your profile type</h1>
-        <h2 className="onboarding__subtitle">
+      <div className="onboarding__card">
+        <h1 className="onboarding__card__title">Choose your profile type</h1>
+        <h2 className="onboarding__card__subtitle">
           Choose your experience by selecting the profile type
         </h2>
-        <div className="onboarding__profile">
-          <Link to="/signup" className="onboarding__profile__option">
-            <button className="onboarding__profile__option__btn">
-              <img src={creator} alt="creator" />
+        <div className="onboarding__card__profile">
+          <Link to="/signup" className="onboarding__card__profile__option">
+            <button className="onboarding__card__profile__option__btn">
+              <img
+                className="onboarding__card__profile__option__btn__img"
+                src={creator}
+                alt="creator"
+              />
             </button>
-            <p className="onboarding__profile__option__text">Creator</p>
+            <p className="onboarding__card__profile__option__text">Creator</p>
           </Link>
 
-          <div className="onboarding__profile__option">
-            <button className="onboarding__profile__option__btn">
-              <img src={business} alt="business" />
+          <div className="onboarding__card__profile__option">
+            <button className="onboarding__card__profile__option__btn">
+              <img
+                className="onboarding__card__profile__option__btn__img"
+                src={business}
+                alt="business"
+              />
             </button>
-            <p className="onboarding__profile__option__text">Business</p>
+            <p className="onboarding__card__profile__option__text">Business</p>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

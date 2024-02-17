@@ -1,119 +1,136 @@
-.logo {
-  margin-top: 2rem;
-  margin-left: 8rem;
-  width: 230px;
-  height: 30px;
-}
+@use "../../../assets/styles/partials/font" as *;
+@use "../../../assets/styles/partials/mixins" as *;
+@use "../../../assets/styles/partials/variables" as *;
 
 .signup {
   background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid silver;
-  border-radius: 40px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin: 1rem;
 
-  width: 668px;
-  height: 550px;
-  margin: 0 auto;
-  margin-top: 5rem;
-
-  &__title {
-    font-size: 30px;
-    font-weight: 600;
-    line-height: 20px;
-    margin-top: 4rem;
+  &__logo {
+    margin-bottom: 2rem;
   }
 
-  &__subtitle {
-    width: 500px;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    text-align: center;
-    color: grey;
-    padding: 1rem;
-  }
-
-  &__image {
-    margin-top: 2rem;
-    width: 60px; // Adjust the width as needed
-    height: 60px; // Adjust the height as needed
-    border-radius: 50%; // Creates a circular shape
-  }
-
-  &__form {
+  &__card {
     display: flex;
     flex-direction: column;
-    margin-left: 1rem;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 16px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 
-    &__name {
+    &__title {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20px;
+
+      @include tablet {
+        font-size: 30px;
+      }
+
+      @include desktop {
+        font-size: 36px;
+      }
+    }
+
+    &__subtitle {
+      width: 400px;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 28px;
+      text-align: center;
+      color: grey;
+      width: 90%;
+
+      @include tablet {
+        font-size: 16px;
+        line-height: 40px;
+        width: 60%;
+      }
+
+      @include desktop {
+        font-size: 24px;
+        line-height: 40px;
+        width: 60%;
+      }
+    }
+
+    &__form {
       display: flex;
       flex-direction: column;
-      width: 100%;
-      justify-content: space-between;
+      margin-left: 1rem;
 
-      &__label {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-        color: grey;
+      &__name {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-between;
+
+        &__label {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          color: grey;
+        }
+        &__input {
+          width: 95%;
+          height: 40px;
+          border: 1px solid silver;
+          border-radius: 12px;
+          margin-bottom: 1rem;
+          padding-left: 1rem;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          outline: none;
+          background-color: #f9fafb;
+          color: black;
+        }
       }
-      &__input {
-        width: 95%;
-        height: 40px;
-        border: 1px solid silver;
-        border-radius: 12px;
-        margin-bottom: 1rem;
-        padding-left: 1rem;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-        outline: none;
-        background-color: #f9fafb;
-        color: black;
+
+      &__info {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+
+        &__label {
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          margin-bottom: 1rem;
+          color: grey;
+        }
+        &__input {
+          width: 95%;
+          height: 40px;
+          border: 1px solid silver;
+          border-radius: 12px;
+          margin-bottom: 1rem;
+          background-color: #f9fafb;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 24px;
+          outline: none;
+        }
       }
     }
-
-    &__info {
-      display: flex;
-      flex-direction: row;
-      width: 100%;
-
-      &__label {
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-        margin-bottom: 1rem;
-        color: grey;
-      }
-      &__input {
-        width: 95%;
-        height: 40px;
-        border: 1px solid silver;
-        border-radius: 12px;
-        margin-bottom: 1rem;
-        background-color: #f9fafb;
-        font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-        outline: none;
-      }
+    &__button {
+      background-color: #7c55ff;
+      border: none;
+      font-family: sans-serif;
+      border-radius: 12px;
+      color: white;
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 400;
+      height: 40px;
+      width: 80px;
+      margin-top: 3rem;
+      margin-left: 1rem;
     }
-  }
-  &__button {
-    background-color: #7c55ff;
-    border: none;
-    font-family: sans-serif;
-    border-radius: 12px;
-    color: white;
-    font-size: 14px;
-    line-height: 18px;
-    font-weight: 400;
-    height: 40px;
-    width: 80px;
-    margin-top: 3rem;
-    margin-left: 1rem;
   }
 }

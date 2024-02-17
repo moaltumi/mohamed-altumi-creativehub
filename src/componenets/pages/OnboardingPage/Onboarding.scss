@@ -1,81 +1,98 @@
-.logo {
-  margin-top: 2rem;
-  margin-left: 8rem;
-  width: 230px;
-  height: 30px;
-}
+@use "../../../assets/styles/partials/font" as *;
+@use "../../../assets/styles/partials/mixins" as *;
+@use "../../../assets/styles/partials/variables" as *;
 
 .onboarding {
   background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 1px solid silver;
-  border-radius: 40px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: 668px;
-  height: 550px;
-  margin: 0 auto;
-  margin-top: 5rem;
+  margin: 1rem;
 
-  &__title {
-    font-size: 40px;
-    font-weight: 600;
-    line-height: 20px;
-    margin-top: 4rem;
+  &__logo {
+    margin-bottom: 2rem;
   }
 
-  &__subtitle {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 24px;
-    color: grey;
-  }
-
-  &__profile {
+  &__card {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    margin-top: 2rem;
+    justify-content: center;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 16px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
 
-    &__option {
+    &__title {
       font-size: 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-decoration: none;
+      font-weight: 600;
+      line-height: 20px;
 
-      &__btn {
-        font-size: 12px;
-        border-radius: 16px;
-        border: 2px solid transparent;
-
-        &:hover {
-          color: #7c55ff;
-          border-color: #7c55ff;
-          border-style: solid;
-        }
+      @include tablet {
+        font-size: 30px;
       }
-      &__text {
-        font-size: 12px;
-        color: black;
-        font-weight: 600;
-        text-decoration: none;
+
+      @include desktop {
+        font-size: 36px;
       }
     }
-  }
-  &__button {
-    background-color: #7c55ff;
-    border: none;
-    font-family: sans-serif;
-    border-radius: 8px;
-    color: white;
-    font-size: 14px;
-    line-height: 18px;
-    font-weight: 400;
-    height: 40px;
-    width: 130px;
-    margin-top: 2rem;
+
+    &__subtitle {
+      width: 400px;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 28px;
+      text-align: center;
+      color: grey;
+      width: 90%;
+
+      @include tablet {
+        font-size: 16px;
+        line-height: 40px;
+      }
+
+      @include desktop {
+        font-size: 24px;
+        line-height: 40px;
+      }
+    }
+
+    &__profile {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+
+      &__option {
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+
+        &__btn {
+          font-size: 12px;
+          border-radius: 8px;
+          border: 2px solid transparent;
+
+          &__img {
+            width: 120px;
+            height: 120px;
+          }
+
+          &:hover {
+            color: #7c55ff;
+            border-color: #7c55ff;
+            border-style: solid;
+          }
+        }
+        &__text {
+          font-size: 12px;
+          color: black;
+          font-weight: 600;
+          text-decoration: none;
+        }
+      }
+    }
   }
 }
