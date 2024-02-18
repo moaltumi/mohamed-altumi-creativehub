@@ -48,9 +48,9 @@ netlify
 # Sprint 1: 
 1-Enable creators to log in and fetch their own feed using their isntagram and discover brands. 
 2-make the application responsive for mobile, tablet and desktop.
+3-demonstrate the functionality using my own instagram account as a creator trying to find brands to colloborate with.
 
-# roadmap:
-# sprint 2:
+# roadmap/sprint 2:
 1-develop the other side of the application where brands can log in and discover creators
 2-implment a log in page for both creators and brands
 
