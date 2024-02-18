@@ -1,14 +1,18 @@
+@use "../../../assets/styles/partials/font" as *;
+@use "../../../assets/styles/partials/mixins" as *;
+@use "../../../assets/styles/partials/variables" as *;
+
 .discover {
   width: 100%;
 
   &__profile-card {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     &__logo {
       margin-top: 2rem;
-      margin-left: 10rem;
       width: 230px;
       height: 30px;
     }
@@ -16,10 +20,9 @@
     &__rowone {
       display: flex;
       flex-direction: row;
-      border-radius: 16px;
-      margin-top: 2rem;
-      margin-right: 10rem;
-      gap: 2rem;
+      border: 1px solid #7c55ff;
+
+      margin: 1rem;
 
       &__select {
         display: flex;
@@ -30,11 +33,10 @@
           background-image: url("../../../assets//images/brand_location\ 1.svg"),
             url("../../../assets//images/chevron-down.png");
           background-repeat: no-repeat;
-          background-position: 5% 50%, 100% 50%;
+          background-position: 0% 50%, 100% 50%;
           background-size: 20px, 21px;
-          width: 147px;
+          width: 137px;
           height: 40px;
-          border-radius: 16px;
           background-color: white;
           border-style: none;
           color: black;
@@ -42,7 +44,7 @@
           font-weight: 400;
           align-items: center;
           justify-content: center;
-          padding-left: 2rem;
+          padding-left: 1.5rem;
           appearance: none;
 
           &:hover {
@@ -55,16 +57,15 @@
           background-repeat: no-repeat;
           background-position: 5% 50%, 100% 50%;
           background-size: 20px, 21px;
-          width: 147px;
+          width: 137px;
           height: 40px;
-          border-radius: 16px;
           border-style: none;
           background-color: white;
           color: black;
           font-size: 16px;
           font-weight: 400;
           appearance: none;
-          padding-left: 2.5rem;
+          padding-left: 2rem;
           &:hover {
             border: 2px solid #7c55ff;
           }
@@ -77,9 +78,8 @@
           background-repeat: no-repeat;
           background-position: 5% 50%, 100% 50%;
           background-size: 20px, 21px;
-          width: 147px;
+          width: 137px;
           height: 40px;
-          border-radius: 16px;
           border-style: none;
           background-color: white;
           color: black;
@@ -114,7 +114,6 @@
     }
   }
   &__gallery {
-    margin-top: 4rem;
     display: flex;
     flex-direction: row;
     justify-content: center;

@@ -1,24 +1,24 @@
-// .back-button {
-//   width: 25%;
-// }
+@use "../../../assets/styles/partials/font" as *;
+@use "../../../assets/styles/partials/mixins" as *;
+@use "../../../assets/styles/partials/variables" as *;
 
 .single-feed {
-  width: 100%;
-  background-color: #ddffff;
-  height: 240vh;
-  background-repeat: repeat;
-  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   &__header {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
 
     &__logo {
-      margin-top: 2rem;
-      margin-left: 10rem;
-      width: 230px;
-      height: 30px;
+      margin: 2rem;
     }
 
     &__discover {
@@ -30,8 +30,6 @@
       &__icon {
         width: 50px;
         height: 50px;
-        margin-top: 2rem;
-        margin-right: 10rem;
       }
     }
   }
@@ -70,6 +68,16 @@
         align-items: center;
         text-decoration: none;
         color: black;
+        font-size: 10px;
+
+        @include tablet {
+          font-size: 12px;
+        }
+
+        @include desktop {
+          font-size: 14px;
+        }
+
         &__logo {
           width: 20px;
           height: 20px;
