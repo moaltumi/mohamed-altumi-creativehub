@@ -1,0 +1,90 @@
+.main {
+  background-color: white;
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.main__heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+}
+.main__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+.main__list__item {
+  margin: 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+  cursor: pointer;
+}
+.main__list__item:hover {
+  color: #000;
+}
+.main__list__item__image {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+}
+.main__list__item__heading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+}
+.main__list__item__text {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+}
+.main__col__one {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+.main__col__one__title {
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.main__col__one__subtitle {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.main__col__one__button {
+  background-color: #00b4d8;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.main__col__one__button:hover {
+  background-color: #0084a8;
+}
+.main__col__two {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 50%;
+}
+.main__col__two__image {
+  width: 40%;
+  height: 5vh;
+}/*# sourceMappingURL.main.css.map */

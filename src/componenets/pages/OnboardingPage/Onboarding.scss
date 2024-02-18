@@ -1,0 +1,98 @@
+@use "../../../assets/styles/partials/font" as *;
+@use "../../../assets/styles/partials/mixins" as *;
+@use "../../../assets/styles/partials/variables" as *;
+
+.onboarding {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+
+  &__logo {
+    margin-bottom: 2rem;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 16px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+
+    &__title {
+      font-size: 16px;
+      font-weight: 600;
+      line-height: 20px;
+
+      @include tablet {
+        font-size: 30px;
+      }
+
+      @include desktop {
+        font-size: 36px;
+      }
+    }
+
+    &__subtitle {
+      width: 400px;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 28px;
+      text-align: center;
+      color: grey;
+      width: 90%;
+
+      @include tablet {
+        font-size: 16px;
+        line-height: 40px;
+      }
+
+      @include desktop {
+        font-size: 24px;
+        line-height: 40px;
+      }
+    }
+
+    &__profile {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 1rem;
+
+      &__option {
+        font-size: 16px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+
+        &__btn {
+          font-size: 12px;
+          border-radius: 8px;
+          border: 2px solid transparent;
+
+          &__img {
+            width: 120px;
+            height: 120px;
+          }
+
+          &:hover {
+            color: #7c55ff;
+            border-color: #7c55ff;
+            border-style: solid;
+          }
+        }
+        &__text {
+          font-size: 12px;
+          color: black;
+          font-weight: 600;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

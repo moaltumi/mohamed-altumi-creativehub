@@ -1,0 +1,278 @@
+@use "../../../assets/styles/partials/font" as *;
+@use "../../../assets/styles/partials/mixins" as *;
+@use "../../../assets/styles/partials/variables" as *;
+
+.discover {
+  width: 100%;
+
+  &__profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__logo {
+      margin-top: 2rem;
+      width: 230px;
+      height: 30px;
+    }
+
+    &__rowone {
+      display: flex;
+      flex-direction: row;
+      border: 1px solid #7c55ff;
+
+      margin: 1rem;
+
+      &__select {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        &-location {
+          background-image: url("../../../assets//images/brand_location\ 1.svg"),
+            url("../../../assets//images/chevron-down.png");
+          background-repeat: no-repeat;
+          background-position: 0% 50%, 100% 50%;
+          background-size: 20px, 21px;
+          width: 137px;
+          height: 40px;
+          background-color: white;
+          border-style: none;
+          color: black;
+          font-size: 14px;
+          font-weight: 400;
+          align-items: center;
+          justify-content: center;
+          padding-left: 1.5rem;
+          appearance: none;
+          border-right: 1px solid #7c55ff;
+
+          &:hover {
+            border: 2px solid #7c55ff;
+          }
+        }
+        &-followers {
+          background-image: url("../../../assets//images/followers.svg"),
+            url("../../../assets//images/chevron-down.png");
+          background-repeat: no-repeat;
+          background-position: 5% 50%, 100% 50%;
+          background-size: 20px, 21px;
+          width: 137px;
+          height: 40px;
+          border-style: none;
+          background-color: white;
+          color: black;
+          font-size: 16px;
+          font-weight: 400;
+          appearance: none;
+          padding-left: 2.5rem;
+          border-right: 1px solid #7c55ff;
+
+          &:hover {
+            border: 2px solid #7c55ff;
+          }
+
+          //   background-color: #f0f0f0;
+        }
+        &-budget {
+          background-image: url("../../../assets//images/Dollar_Coin_1\ 1.svg"),
+            url("../../../assets//images/chevron-down.png");
+          background-repeat: no-repeat;
+          background-position: 5% 50%, 100% 50%;
+          background-size: 20px, 21px;
+          width: 137px;
+          height: 40px;
+          border-style: none;
+          background-color: white;
+          color: black;
+          font-size: 16px;
+          font-weight: 400;
+          appearance: none;
+          padding-left: 2rem;
+          &:hover {
+            border: 2px solid #7c55ff;
+          }
+        }
+        &-search {
+          background-image: url("../../../assets/images/search2.svg");
+          background-repeat: no-repeat;
+          background-position: center;
+          width: 40px;
+          height: 40px;
+          border-radius: 16px;
+          border-style: none;
+          background-color: white;
+        }
+      }
+
+      &__stats {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        padding: 0 0.5rem;
+      }
+    }
+  }
+  &__gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    // padding: 1rem;
+    gap: 1rem;
+
+    &__profile {
+      display: flex;
+      flex-direction: column;
+      // margin-bottom: 2rem;
+
+      &__header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        border-style: none;
+        // background-color: white;
+        border-radius: 16px;
+        // width: 350px;
+
+        &__image {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          padding: 0.5rem;
+        }
+        &__name {
+          font-size: 14px;
+          font-weight: 400;
+        }
+
+        &__followers {
+          font-size: 14px;
+          font-weight: 400;
+          color: black;
+          padding: 0.25rem;
+        }
+        &__instagram {
+          width: 30px;
+          height: 30px;
+          padding: 0.5rem;
+        }
+      }
+
+      &__post {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &__image {
+          width: 360px;
+          height: 400px;
+
+          padding: 8px;
+
+          &:hover + .discover__gallery__profile__post__back-content {
+            display: flex;
+            // opacity: 2;
+          }
+        }
+        &__back-content {
+          display: flex;
+          flex-direction: column;
+          position: absolute;
+          width: 360px;
+          height: 410px;
+          background-color: white;
+          display: none;
+          justify-content: center;
+          color: black;
+          transition: 10s;
+
+          &__rowone {
+            display: flex;
+            flex-direction: column;
+            padding: 0.5rem;
+
+            &__description {
+              font-size: 12px;
+              font-weight: 400;
+              padding: 0.5rem;
+              border-left: 1px solid #7c55ff;
+            }
+
+            &__about {
+              font-size: 12px;
+              font-weight: 400;
+              padding: 0.5rem;
+              border-left: 1px solid #7c55ff;
+            }
+          }
+
+          &__rowtwo {
+            display: flex;
+            flex-direction: column;
+            padding: 0.5rem;
+
+            &__budget {
+              font-size: 12px;
+              font-weight: 400;
+              border-left: 1px solid #7c55ff;
+              padding-left: 0.5rem;
+            }
+
+            &__reqfollowers {
+              font-size: 12px;
+              font-weight: 400;
+              border-left: 1px solid #7c55ff;
+              padding-left: 0.5rem;
+            }
+
+            &__link {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              margin-top: 1rem;
+              &__connect {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+                height: 40px;
+                width: 40px;
+              }
+
+              &__text {
+                font-size: 12px;
+                font-weight: 400;
+                color: grey;
+              }
+            }
+          }
+        }
+
+        &__pricing {
+          font-size: 12px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          padding: 0px 1rem;
+          gap: 1rem;
+        }
+        &__discover {
+          background-color: #7c55ff;
+          border: none;
+          font-family: sans-serif;
+          color: white;
+          border-radius: 8px;
+          font-size: 14px;
+          line-height: 18px;
+          font-weight: 600;
+          height: 50px;
+          width: 100px;
+        }
+      }
+    }
+  }
+}

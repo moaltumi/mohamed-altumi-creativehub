@@ -1,0 +1,168 @@
+@use "../../../assets/styles/partials/font" as *;
+@use "../../../assets/styles/partials/mixins" as *;
+@use "../../../assets/styles/partials/variables" as *;
+
+.single-feed {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+
+    @include tablet {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__logo {
+      margin: 2rem;
+    }
+
+    &__discover {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      &__icon {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+
+  .profile-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+
+    &__rowone {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      &__header {
+        display: flex;
+        font-size: 12px;
+        gap: 2rem;
+        flex-direction: column-reverse;
+        align-items: center;
+        padding-left: 2rem;
+      }
+    }
+
+    &__rowone {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      &__info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-decoration: none;
+        color: black;
+        font-size: 10px;
+
+        @include tablet {
+          font-size: 12px;
+        }
+
+        @include desktop {
+          font-size: 14px;
+        }
+
+        &__logo {
+          width: 20px;
+          height: 20px;
+          padding-right: 0.25rem;
+        }
+      }
+
+      &__logo {
+        width: 20px;
+        height: 20px;
+      }
+
+      &__image {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border-color: #7c55ff;
+        border-style: solid;
+      }
+
+      &__stats {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        padding: 0 0.5rem;
+      }
+    }
+
+    // discover button
+    &__rowthree {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &__title {
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+
+      &__subtitle {
+        font-size: 16px;
+        font-weight: 400;
+        margin-bottom: 20px;
+      }
+      &__buttons {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        &__upload-ig {
+          background-image: url("../../../assets//images/import.svg");
+          background-color: #7c55ff;
+          background-position: center left 0.5rem;
+          background-repeat: no-repeat;
+          background-size: 30px 30px;
+          border: none;
+          font-family: sans-serif;
+          color: white;
+          border-radius: 8px;
+          font-size: 14px;
+          font-weight: 600;
+          height: 50px;
+          width: 242px;
+        }
+      }
+    }
+  }
+
+  // gallery
+  .profile-card__galery {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    &__image {
+      width: 360px;
+      height: 400px;
+      padding: 11px;
+    }
+  }
+}

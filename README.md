@@ -1,70 +1,60 @@
-# Getting Started with Create React App
+backend repo is at : https://github.com/moaltumi/mohamed-altumi-creativehub-backend 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Project Title
+Creative Hub 
 
-In the project directory, you can run:
+# Overview
+Creative Hub is a platform that facilitates collaboration between creators and brands, addressing the increasing demand for influencers in marketing. The goal is to streamline communication between creators and businesses, eliminating the current reliance on direct outreach through platforms like Instagram.
 
-### `npm start`
+ # Problem
+In the current market, there is a lack of a centralized platform that effectively connects creators and brands. Many creators resort to reaching out to brands on social media platforms like Instagram, leading to inefficiencies and missed opportunities.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# User Profile
+The application primarily targets brands and small to medium-sized creators seeking collaboration opportunities. These users often struggle to find suitable partners for their marketing needs.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+# Tech Stack
+Frontend:
+React router
+async/await
+scss
+cascading style
+responsive design
+BEM
+flexbox
+____________
+Backend:
+node.js/express
+middleware
+______________
+deployment: 
+netlify
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Screenshots
+<img width="1470" alt="screenshot1" src="https://github.com/moaltumi/mohamed-altumi-creativehub/assets/77698731/56d75e46-eed4-4044-9144-2414e3877b13">
+<img width="305" alt="Screenshot2" src="https://github.com/moaltumi/mohamed-altumi-creativehub/assets/77698731/c99a10cf-c852-4aec-b68f-bb868af35bd2">
+<img width="392" alt="Screenshot 2024-02-18 at 1 31 29 PM" src="https://github.com/moaltumi/mohamed-altumi-creativehub/assets/77698731/75b29c15-980f-4b29-a462-e45865aaf7f0">
+<img width="396" alt="Screenshot 2024-02-18 at 1 37 41 PM" src="https://github.com/moaltumi/mohamed-altumi-creativehub/assets/77698731/bfdf378f-89e4-4211-af71-260231a29311">
+<img width="700" alt="Screenshot 2024-02-18 at 1 32 14 PM" src="https://github.com/moaltumi/mohamed-altumi-creativehub/assets/77698731/1283d718-3367-4014-92af-159938981075">
+<img width="1458" alt="Screenshot 2024-02-18 at 1 33 12 PM" src="https://github.com/moaltumi/mohamed-altumi-creativehub/assets/77698731/889d6040-6b14-48c2-8410-851df2c68f07">
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Sprint 1: 
+1-Enable creators to log in and fetch their own feed using their isntagram and discover brands. 
+2-make the application responsive for mobile, tablet and desktop.
+3-demonstrate the functionality using my own instagram account as a creator trying to find brands to colloborate with.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# roadmap/sprint 2:
+1-develop the other side of the application where brands can log in and discover creators
+2-implment a log in page for both creators and brands
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
